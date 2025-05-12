@@ -6,8 +6,8 @@ import jakarta.mail.internet.*;
 
 public class SendOTPService {
     public static void sendOTP(String toEmail, String otp) {
-        final String fromEmail = "ayush9123288616@gmail.com"; 
-        final String password = "zvylnlvztjntynea"; 
+        final String fromEmail = "your gmail "; // use your gmail to send code to someone
+        final String password = "gamil password";// use alternative 16 digit gmail password 
 
         // SMTP Configuration
         Properties props = new Properties();
