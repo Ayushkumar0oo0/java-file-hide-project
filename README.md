@@ -1,18 +1,43 @@
-## Getting Started
+# File Hider App (Java Swing + JDBC + JavaMail)
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## 📌 Features
+- Register/Login using Email OTP
+- File hiding by moving content to DB (CLOB)
+- File unhide and restore from DB
+- GUI using Java Swing
 
-## Folder Structure
+## 🛠️ Tech Stack
+- Java (Swing, JDBC, JavaMail)
+- MySQL Database
 
-The workspace contains two folders by default, where:
+## ⚙️ Environment Variables
+Create a `.env` file with:
+```
+EMAIL_SENDER=your_email@gmail.com
+EMAIL_PASSWORD=your_16_char_app_password
+DB_URL=jdbc:mysql://localhost:3306/student
+DB_USER=your_db_user
+DB_PASS=your_db_password
+```
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## 🧪 Sample SQL Setup
+```sql
+CREATE TABLE user (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE
+);
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+CREATE TABLE data (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    path TEXT,
+    email VARCHAR(100),
+    bin_data LONGTEXT
+);
+```
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## 🚀 How to Run
+1. Clone the repo
+2. Setup environment variables or config file
+3. Compile and run `Main.java`
